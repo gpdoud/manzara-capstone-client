@@ -1,6 +1,9 @@
 <div>
     <app-menu></app-menu>
     <h2>User List</h2>
+    <div>
+        <a [routerLink]="['/user/create']" class="btn btn-sm btn-success">Create User</a>
+    </div>
     <table class="table table-sm table-striped">
         <thead>
             <tr>
@@ -28,6 +31,8 @@
                     <td>{{ x.isAdmin ? 'Yes' : 'No' }}</td>
                     <td>
                         <span><a [routerLink]="['/user/view', x.id]" class="btn btn-sm btn-primary">VIEW</a></span>
+                        <span> | </span>
+                        <span><a [routerLink]="['/user/edit', x.id]" class="btn btn-sm btn-warning">EDIT</a></span>
                     </td>
                 </tr>
             }

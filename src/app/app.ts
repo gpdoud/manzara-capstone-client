@@ -4,7 +4,7 @@ import { MenuComponent } from './prs/menu/menu/menu.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MenuComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from '../user.class';
 import { UserService } from '../user.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MenuComponent } from "../../menu/menu/menu.component";
 import { FormsModule } from '@angular/forms';
 
@@ -16,13 +16,28 @@ export class UserViewComponent {
   user: User = new User();
 
   constructor(
+    private usersvc: UserService,
     private route: ActivatedRoute,
-    private userService: UserService
+    private router: Router
   ) {}
+
+  remove(): void {
+    this.usersvc.remove(this.user.id).subscribe({
+      next: (res: any) => {
+        console.log("User deleted successfully", res);
+        this.router.navigate(['/user/list']);
+      },
+      error: (err: any) => {
+        console.error("Error deleting user", err);
+      }
+    });
+  }
+
+  
 
   ngOnInit(): void {
     var id = this.route.snapshot.params['id'];
-    this.userService.get(id).subscribe({
+    this.usersvc.get(id).subscribe({
       next: (user: User) => {
         this.user = user;
       },
