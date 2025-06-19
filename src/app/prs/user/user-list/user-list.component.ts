@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../user.class';
+import { MenuComponent } from "../../menu/menu/menu.component";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
-  imports: [],
+  imports: [MenuComponent, RouterLink],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.css'
 })
@@ -17,6 +19,7 @@ export class UserListComponent {
   ) {}
 
   viewUser(user: User): void {
+
   }
 
   ngOnInit(): void {

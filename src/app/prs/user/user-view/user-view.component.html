@@ -1,0 +1,46 @@
+<div>
+    <app-menu></app-menu>
+    <h2>User View</h2>
+    <table class="table table-sm table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <td><input [(ngModel)]="user.id" disabled /></td>
+            </tr>
+            <tr>
+                <td>Username</td>
+                <td><input [(ngModel)]="user.username" disabled /></td>
+            </tr>
+            <tr>
+                <td>Firstname</td>
+                <td><input [(ngModel)]="user.firstname" disabled /></td>
+            </tr>
+            <tr>
+                <td>Lastname</td>
+                <td><input [(ngModel)]="user.lastname" disabled /></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input [(ngModel)]="user.email" disabled /></td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td><input [(ngModel)]="user.phone" disabled /></td>
+            </tr>
+            <tr>
+                <td>Reviewer?</td>
+                <td><input [(ngModel)]="user.isReviewer" disabled /></td>
+            </tr>
+            <tr>
+                <td>Admin?</td>
+                <td><input [(ngModel)]="user.isAdmin" disabled /></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

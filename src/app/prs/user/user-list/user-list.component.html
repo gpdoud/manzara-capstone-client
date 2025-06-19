@@ -1,4 +1,6 @@
 <div>
+    <app-menu></app-menu>
+    <h2>User List</h2>
     <table class="table table-sm table-striped">
         <thead>
             <tr>
@@ -25,7 +27,7 @@
                     <td>{{ x.isReviewer ? 'Yes' : 'No' }}</td>
                     <td>{{ x.isAdmin ? 'Yes' : 'No' }}</td>
                     <td>
-                        <span><button (click)="viewUser(x)" class="btn btn-sm btn-primary">VIEW</button></span>
+                        <span><a [routerLink]="['/user/view', x.id]" class="btn btn-sm btn-primary">VIEW</a></span>
                     </td>
                 </tr>
             }
