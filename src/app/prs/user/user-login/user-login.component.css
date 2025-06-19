@@ -1,0 +1,11 @@
+table {
+    width: 30%;
+    margin: 30px auto;
+    border: 1px solid silver;
+    padding: 30px 20px;
+}
+.message {
+    color: red;
+    font-weight: bold;
+    text-align: right;
+}

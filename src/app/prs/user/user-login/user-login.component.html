@@ -1,1 +1,32 @@
-<p>user-login works!</p>
+<div>
+    <app-menu></app-menu>
+    <table class="table table-sm table-borderless" >
+        <tbody>
+            <tr>
+                <th class="text-center"><h2>Login</h2></th>
+            </tr>
+            <tr>
+                <th>Username</th>
+            </tr>
+            <tr>
+                <th><input type="text" [(ngModel)]="username" /></th>
+            </tr>
+            <tr>
+                <th>Password</th>
+            </tr>
+            <tr>
+                <th><input type="password" [(ngModel)]="password" /></th>
+            </tr>
+            <tr>
+                <th>
+                    <button (click)="login()" class="btn btn-sm btn-primary">Login</button>
+                </th>
+            </tr>
+            <tr>
+                <th class="message">
+                    <span>{{ message}}</span>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -17,7 +17,7 @@ export class MenuComponent {
     { display: 'Request', route: '/req/list' },
     { display: 'Review', route: '/rev/list' },
     { display: 'About', route: '/about' },
-    { display: 'Login', route: '/login' }
+    { display: 'Login', route: '/user/login' }
   ]
 
   ngOnInit(): void {

@@ -6,6 +6,7 @@ import { E404Component } from './misc/e404/e404.component';
 import { UserViewComponent } from './prs/user/user-view/user-view.component';
 import { UserChangeComponent } from './prs/user/user-change/user-change.component';
 import { UserCreateComponent } from './prs/user/user-create/user-create.component';
+import { UserLoginComponent } from './prs/user/user-login/user-login.component';
 
 
 export const routes: Routes = [
@@ -14,6 +15,7 @@ export const routes: Routes = [
     { path: 'user/view/:id', component: UserViewComponent},
     { path: 'user/create', component: UserCreateComponent},
     { path: 'user/edit/:id', component: UserChangeComponent},
+    { path: 'user/login', component: UserLoginComponent},
 
     { path: 'home', component: HomeComponent},
     { path: 'about', component: AboutComponent},
