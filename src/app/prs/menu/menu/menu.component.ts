@@ -11,11 +11,11 @@ export class MenuComponent {
 
   menus = [
     { display: 'Home', route: '/home' },
-    { display: 'User', route: '/userlist' },
-    { display: 'Vendor', route: '/vendlist' },
-    { display: 'Product', route: '/prodlist' },
-    { display: 'Request', route: '/reqlist' },
-    { display: 'Review', route: '/revlist' },
+    { display: 'User', route: '/userList' },
+    { display: 'Vendor', route: '/vendList' },
+    { display: 'Product', route: '/prodList' },
+    { display: 'Request', route: '/reqList' },
+    { display: 'Review', route: '/revList' },
     { display: 'About', route: '/about' },
     { display: 'Login', route: '/login' }
   ]
