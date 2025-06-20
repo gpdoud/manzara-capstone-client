@@ -1,1 +1,53 @@
-<p>vendor-view works!</p>
+<div>
+    <app-menu></app-menu>
+    <h2>Vendor View</h2>
+    <table class="table table-sm table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <td><input [(ngModel)]="vendor.id" disabled title="Vendor Id" placeholder="Id" /></td>
+            </tr>
+            <tr>
+                <td>Vendorname</td>
+                <td><input [(ngModel)]="vendor.code" disabled title="Code" placeholder="Code" /></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input [(ngModel)]="vendor.name" disabled title="Name" placeholder="Name" /></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><input [(ngModel)]="vendor.address" disabled title="Address" placeholder="Address" /></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td><input [(ngModel)]="vendor.city" disabled title="City" placeholder="City" /></td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td><input [(ngModel)]="vendor.state" disabled title="State" placeholder="State" /></td>
+            </tr>
+            <tr>
+                <td>Zip</td>
+                <td><input [(ngModel)]="vendor.zip" disabled title="Zip" placeholder="Zip" /></td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td><input [(ngModel)]="vendor.phone" disabled title="Phone" placeholder="Phone" /></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input [(ngModel)]="vendor.email" disabled title="Email" placeholder="Email" /></td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button class="btn btn-sm btn-danger" (click)="remove()">Delete</button>
+    </div>
+</div>
