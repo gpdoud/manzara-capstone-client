@@ -18,10 +18,6 @@ export class VendorListComponent {
     private vendorsvc: VendorService
   ) {}
 
-  viewVendor(vendor: Vendor): void {
-
-  }
-
   ngOnInit(): void {
     this.vendorsvc.list().subscribe({
       next: (res) => {

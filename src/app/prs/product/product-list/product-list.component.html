@@ -1,0 +1,38 @@
+<div>
+    <app-menu></app-menu>
+    <h2>Products List</h2>
+    <div>
+        <a [routerLink]="['/product/create']" class="btn btn-sm btn-success">Create Product</a>
+    </div>
+    <table class="table table-sm table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>PartNbr</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Unit</th>
+                <th>Vendor</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (x of products; track x.id) {
+                <tr>
+                    <td>{{ x.id }}</td>
+                    <td>{{ x.partNbr }}</td>
+                    <td>{{ x.name }}</td>
+                    <td>{{ x.price | currency }}</td>
+                    <td>{{ x.unit }}</td>
+                    <td>{{ x.vendor?.name }}</td>
+                    <td>
+                        <span><a [routerLink]="['/product/view', x.id]" class="btn btn-sm btn-primary">VIEW</a></span>
+                        <span> | </span>
+                        <span><a [routerLink]="['/product/change', x.id]" class="btn btn-sm btn-warning">EDIT</a></span>
+                    </td>
+                </tr>
+            }
+            <!-- User data will be populated here -->
+        </tbody>
+    </table>
+</div>

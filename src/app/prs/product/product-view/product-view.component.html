@@ -1,0 +1,45 @@
+<div>
+    <app-menu></app-menu>
+    <h2>Product View</h2>
+    <table class="table table-sm table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <td><input [(ngModel)]="product.id" disabled title="Product Id" placeholder="Id" /></td>
+            </tr>
+            <tr>
+                <td>PartNbr</td>
+                <td><input [(ngModel)]="product.partNbr" disabled title="PartNbr" placeholder="PartNbr" /></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input [(ngModel)]="product.name" disabled title="Name" placeholder="Name" /></td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td><input [(ngModel)]="product.price" disabled title="price" placeholder="price" /></td>
+            </tr>
+            <tr>
+                <td>Unit</td>
+                <td><input [(ngModel)]="product.unit" disabled title="Unit" placeholder="Unit" /></td>
+            </tr>
+            <tr>
+                <td>PhotoPath</td>
+                <td><input [(ngModel)]="product.photopath" disabled title="photopath" placeholder="photopath" /></td>
+            </tr>
+            <tr>
+                <td>Vendor</td>
+                <td><input [(ngModel)]="product.vendor!.name" disabled title="VendorName" placeholder="VendorName" /></td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button class="btn btn-sm btn-danger" (click)="remove()">Delete</button>
+    </div>
+</div>
