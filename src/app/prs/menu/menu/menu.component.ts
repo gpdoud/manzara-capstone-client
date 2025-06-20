@@ -12,10 +12,10 @@ export class MenuComponent {
   menus = [
     { display: 'Home', route: '/home' },
     { display: 'User', route: '/user/list' },
-    { display: 'Vendor', route: '/vend/list' },
-    { display: 'Product', route: '/prod/list' },
-    { display: 'Request', route: '/req/list' },
-    { display: 'Review', route: '/rev/list' },
+    { display: 'Vendor', route: '/vendor/list' },
+    { display: 'Product', route: '/product/list' },
+    { display: 'Request', route: '/request/list' },
+    { display: 'Review', route: '/review/list' },
     { display: 'About', route: '/about' },
     { display: 'Login', route: '/user/login' }
   ]
