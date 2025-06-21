@@ -1,1 +1,52 @@
-<p>request-change works!</p>
+<div>
+    <app-menu></app-menu>
+    <h2>Request Create</h2>
+    <table class="table table-sm table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <td>Id</td>
+                <td><input [(ngModel)]="request.id" disabled title="RequestId" placeholder="RequestId" /></td>
+            </tr>        
+            <tr>
+                <td>PartNbr</td>
+                <td><input [(ngModel)]="request.description"  title="description" placeholder="description" /></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input [(ngModel)]="request.justification"  title="justification" placeholder="justification" /></td>
+            </tr>
+            @if(request.rejectionReason) {
+                <tr>
+                    <td>RejectionReason</td>
+                    <td><input [(ngModel)]="request.rejectionReason" disabled title="rejectionReason" placeholder="rejectionReason" /></td>
+                </tr>
+            }
+            <tr>
+                <td>Unit</td>
+                <td><input [(ngModel)]="request.deliveryMode"  title="deliveryMode" placeholder="deliveryMode" /></td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td><input [ngModel]="request.status" disabled title="status" placeholder="status" /></td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td><input [ngModel]="request.total | currency" disabled title="status" placeholder="status" /></td>
+            </tr>
+            <tr>
+                <td>User</td>
+                <td><input [ngModel]="request.user?.username" disabled title="username" placeholder="username" /></td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button class="btn btn-sm btn-danger" (click)="save()">Save</button>
+    </div>
+</div>
