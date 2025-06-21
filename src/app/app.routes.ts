@@ -15,6 +15,10 @@ import { ProductChangeComponent } from './prs/product/product-change/product-cha
 import { ProductCreateComponent } from './prs/product/product-create/product-create.component';
 import { ProductListComponent } from './prs/product/product-list/product-list.component';
 import { ProductViewComponent } from './prs/product/product-view/product-view.component';
+import { RequestChangeComponent } from './prs/request/request-change/request-change.component';
+import { RequestCreateComponent } from './prs/request/request-create/request-create.component';
+import { RequestListComponent } from './prs/request/request-list/request-list.component';
+import { RequestViewComponent } from './prs/request/request-view/request-view.component';
 
 
 export const routes: Routes = [
@@ -24,6 +28,11 @@ export const routes: Routes = [
     { path: 'product/view/:id', component: ProductViewComponent},
     { path: 'product/create', component: ProductCreateComponent},
     { path: 'product/change/:id', component: ProductChangeComponent},
+
+    { path: 'request/list', component: RequestListComponent},
+    { path: 'request/view/:id', component: RequestViewComponent},
+    { path: 'request/create', component: RequestCreateComponent},
+    { path: 'request/change/:id', component: RequestChangeComponent},
 
     { path: 'user/list', component: UserListComponent},
     { path: 'user/view/:id', component: UserViewComponent},

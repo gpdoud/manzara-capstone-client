@@ -1,0 +1,42 @@
+<div>
+    <app-menu></app-menu>
+    <h2>Request List</h2>
+    <div>
+        <a [routerLink]="['/request/create']" class="btn btn-sm btn-success">Create Request</a>
+    </div>
+    <table class="table table-sm table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Justification</th>
+                <th>RejectionReason</th>
+                <th>DeliveryMode</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>User</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (x of requests; track x.id) {
+                <tr>
+                    <td>{{ x.id }}</td>
+                    <td>{{ x.description }}</td>
+                    <td>{{ x.justification }}</td>
+                    <td>{{ x.rejectionReason }}</td>
+                    <td>{{ x.deliveryMode }}</td>
+                    <td>{{ x.status }}</td>
+                    <td>{{ x.total | currency }}</td>
+                    <td>{{ x.user!.username }}</td>
+                    <td>
+                        <span><a [routerLink]="['/request/view', x.id]" class="btn btn-sm btn-primary">VIEW</a></span>
+                        <span> | </span>
+                        <span><a [routerLink]="['/request/change', x.id]" class="btn btn-sm btn-warning">EDIT</a></span>
+                    </td>
+                </tr>
+            }
+            <!-- User data will be populated here -->
+        </tbody>
+    </table>
+</div>
