@@ -1,1 +1,49 @@
-<p>request-view works!</p>
+<div>
+    <app-menu></app-menu>
+    <h2>Request View</h2>
+    <table class="table table-sm table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <td><input [(ngModel)]="request.id" disabled title="Id" placeholder="Id" /></td>
+            </tr>
+            <tr>
+                <td>PartNbr</td>
+                <td><input [(ngModel)]="request.description" disabled title="description" placeholder="description" /></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input [(ngModel)]="request.justification" disabled title="justification" placeholder="justification" /></td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td><input [(ngModel)]="request.rejectionReason" disabled title="rejectionReason" placeholder="rejectionReason" /></td>
+            </tr>
+            <tr>
+                <td>Unit</td>
+                <td><input [(ngModel)]="request.deliveryMode" disabled title="deliveryMode" placeholder="deliveryMode" /></td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td><input [ngModel]="request.status" disabled title="status" placeholder="status" /></td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td><input [ngModel]="request.total | currency" disabled title="status" placeholder="status" /></td>
+            </tr>
+            <tr>
+                <td>Vendor</td>
+                <td><input [ngModel]="request.user!.username" disabled title="username" placeholder="username" /></td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button class="btn btn-sm btn-danger" (click)="remove()">Delete</button>
+    </div>
+</div>

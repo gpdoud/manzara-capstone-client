@@ -9,7 +9,7 @@ export class Request {
         public deliveryMode: string = '',
         public status: string = 'NEW',
         public total: number = 0,
-        public userId: number = 0,
+        public userId: number = 3,
         public user: User | null = null
     ) {}
 }
