@@ -1,6 +1,6 @@
 <div>
     <app-menu></app-menu>
-    <h2>Request List</h2>
+    <h2>Request Lines</h2>
     <div>
         <a [routerLink]="['/request/create']" class="btn btn-sm btn-success">Create Request</a>
     </div>
@@ -33,6 +33,8 @@
                         <span><a [routerLink]="['/request/view', x.id]" class="btn btn-sm btn-primary">VIEW</a></span>
                         <span> | </span>
                         <span><a [routerLink]="['/request/change', x.id]" class="btn btn-sm btn-warning">EDIT</a></span>
+                        <span> | </span>
+                        <span><a [routerLink]="['/request/lines', x.id]" class="btn btn-sm btn-success">LINES</a></span>
                     </td>
                 </tr>
             }
