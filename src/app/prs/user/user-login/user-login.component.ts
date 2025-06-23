@@ -25,6 +25,7 @@ export class UserLoginComponent {
 
   login(): void {
     this.message = ''
+    this.syssvc.clearLoggedInUser();
     this.usersvc.login(this.username, this.password).subscribe({
       next: (res: any) => {
         console.log("Login successful", res);

@@ -7,6 +7,7 @@ import { RequestService } from '../request.service';
 import { MenuComponent } from "../../menu/menu/menu.component";
 import { FormsModule } from '@angular/forms';
 import { Request } from '../request.class';
+import { SystemService } from '../../system/system.service';
 
 @Component({
   selector: 'app-request-create',
@@ -19,6 +20,7 @@ export class RequestCreateComponent {
   request: Request = new Request();
 
   constructor(
+    public syssvc: SystemService,
     public reqsvc: RequestService,
     public router: Router
   ) {}
@@ -36,6 +38,9 @@ export class RequestCreateComponent {
   }
 
   ngOnInit(): void {
+    this.syssvc.chkLogin();
+    var user = this.syssvc.getLoggedInUser() as User;
+    this.request.userId = user.id;
   }
 
 }
