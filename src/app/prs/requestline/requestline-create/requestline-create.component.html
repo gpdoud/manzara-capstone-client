@@ -1,0 +1,35 @@
+<div>
+    <app-menu></app-menu>
+    <h2>Requestline Create</h2>
+    <table class="table table-sm table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <td><input [(ngModel)]="requestline.id" disabled title="Id" placeholder="Id" /></td>
+            </tr>        
+            <tr>
+                <td>Product</td>
+                <td>
+                    <select [(ngModel)]="requestline.productId" title="ProductId" placeholder="ProductId">
+                        @for(product of products; track product.id) {
+                            <option [value]="product.id">{{ product.name }}</option>
+                        }
+                    </select>
+                </td>
+            </tr>        
+            <tr>
+                <td>Quantity</td>
+                <td><input [(ngModel)]="requestline.quantity" type="number" id="quantity" title="Quantity" placeholder="Quantity" /></td>
+            </tr>        
+        </tbody>
+    </table>
+    <div>
+        <button class="btn btn-sm btn-primary" (click)="save()">Save</button>
+    </div>
+</div>

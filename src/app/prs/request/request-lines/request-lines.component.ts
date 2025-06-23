@@ -5,6 +5,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { RequestService } from '../request.service';
 import { MenuComponent } from "../../menu/menu/menu.component";
 import { Requestline } from '../../requestline/requestline.class';
+import { RequestlineService } from '../../requestline/requestline.service';
 
 @Component({
   selector: 'app-request-lines',
@@ -17,6 +18,7 @@ export class RequestLinesComponent {
 
   constructor(
     private reqsvc: RequestService,
+    private reqlsvc: RequestlineService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
@@ -34,13 +36,22 @@ export class RequestLinesComponent {
   }
 
   edit(id: number): void {
+    this.router.navigate(['/requestline/change', id]);
+  }
 
+  create(rid: number): void {
+    this.router.navigate(['/requestline/create', rid]);
   }
 
   remove(requestline: Requestline): void {
-
+    this.reqlsvc.remove(requestline.id).subscribe({
+      next: (res: any) => {
+        this.refresh();
+      },
+      error: (err: any) => {;
+      }
+    });
   }
-
 
   refresh(): void {
     const id = this.route.snapshot.params['id'];
