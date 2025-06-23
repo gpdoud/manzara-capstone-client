@@ -15,7 +15,7 @@ export class MenuComponent {
     { display: 'Vendor', route: '/vendor/list' },
     { display: 'Product', route: '/product/list' },
     { display: 'Request', route: '/request/list' },
-    { display: 'Review', route: '/review/list' },
+    { display: 'Review', route: '/request/review/list' },
     { display: 'About', route: '/about' },
     { display: 'Login', route: '/user/login' }
   ]

@@ -1,0 +1,67 @@
+<div>
+  <app-menu></app-menu>
+  <h2>Request List</h2>
+  <table class="table table-sm table-striped">
+      <thead>
+          <tr>
+              <th>Id</th>
+              <th>Description</th>
+              <th>RejectionReason</th>
+              <th>Status</th>
+              <th>Total</th>
+              <th>User</th>
+              <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ request.id }}</td>
+                <td>{{ request.description }}</td>
+                <td>{{ request.rejectionReason }}</td>
+                <td class="fw-bold" [ngClass]="statuscolor">{{ request.status }}</td>
+                <td>{{ request.total | currency }}</td>
+                <td>{{ request.user!.username }}</td>
+                <td>
+                    <span
+                    ><a (click)="review()" class="btn btn-sm btn-primary">REVIEW</a>
+                    </span
+                    >
+                </td>
+            </tr>
+            <!-- User data will be populated here -->
+        </tbody>
+    </table>
+  <h2>Requestline List</h2>
+  <table class="table table-sm table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Line Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (x of request.requestlines; track x.id) {
+      <tr>
+        <td>{{ x.id }}</td>
+        <td>{{ x.product.name }}</td>
+        <td>{{ x.quantity }}</td>
+        <td>{{ x.product.price | currency }}</td>
+        <td>{{ x.product.price * x.quantity | currency }}</td>
+      </tr>
+    }
+</tbody>
+</table>
+<div>
+    <a (click)="approve()" class="btn btn-sm btn-success">APPROVE</a>
+    <span> | </span>
+    <input [(ngModel)]="request.rejectionReason" title="Rejection Reason" placeholder="Rejection Reason" />
+    @if(this.request.rejectionReason != null && this.request.rejectionReason.length > 0) {
+        <span> | </span>
+        <a (click)="reject()" class="btn btn-sm btn-danger" >REJECT</a>
+    }
+
+</div>
+</div>
