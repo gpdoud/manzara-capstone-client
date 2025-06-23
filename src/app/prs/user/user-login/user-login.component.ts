@@ -3,6 +3,7 @@ import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { MenuComponent } from "../../menu/menu/menu.component";
 import { FormsModule } from '@angular/forms';
+import { SystemService } from '../../system/system.service';
 
 @Component({
   selector: 'app-user-login',
@@ -17,6 +18,7 @@ export class UserLoginComponent {
   message: string = ''
 
   constructor(
+    public syssvc: SystemService,
     public usersvc: UserService,
     public router: Router
   ) {}
@@ -26,7 +28,8 @@ export class UserLoginComponent {
     this.usersvc.login(this.username, this.password).subscribe({
       next: (res: any) => {
         console.log("Login successful", res);
-        this.router.navigate(['/user/list']);
+        this.syssvc.setLoggedInUser(res);
+        this.router.navigate(['/request/list']);
       },
       error: (err: any) => {
         console.error("Login failed", err);
